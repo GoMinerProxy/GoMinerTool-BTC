@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/GoMinerProxy/GoMinerProxy/main/images/logo.png" width="350"/>
+  <img src="https://raw.githubusercontent.com/GoMinerProxy/GoMinerProxy-BTC/main/images/logo.png" width="350"/>
 </h1>
 
 <h4 align="center">基於GoLang的高性能多線程BTC礦池轉發中繼代理工具. </h4>
