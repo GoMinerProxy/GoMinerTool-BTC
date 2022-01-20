@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/GoMinerProxy/GoMinerProxy/blob/main/README_zh-cn.md">简体介绍</a> •
+  <a href="https://github.com/GoMinerProxy/GoMinerProxy-BTC/blob/main/README_zh-cn.md">简体介绍</a> •
   <a href="https://gominerproxy.github.io/zh_hk/">文檔(繁體中文)</a> •
   <a href="https://gominerproxy.github.io/zh_cn/">文档(简体中文)</a> •
   <a href="https://t.me/+afVqEXnxtQAyNWNh">Telegram 討論群组</a> •
@@ -53,7 +53,7 @@
 
 ### Linux一鍵管理脚本
 ```shell
-
+即將更新
 ```
 
 ## :alembic: 技术栈
