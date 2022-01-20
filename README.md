@@ -7,7 +7,7 @@
 
 <p align="center">
   <a>
-    <img src="https://img.shields.io/badge/Release-Bate_BTC/ETC-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Release-Bate_BTC-orgin.svg" alt="travis">
   </a>
   <a>
     <img src="https://img.shields.io/badge/Last_Update-2022_01_20-orgin.svg" alt="travis">
