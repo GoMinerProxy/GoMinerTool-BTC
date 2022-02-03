@@ -4,7 +4,8 @@
 </h1>
 
 <h4 align="center">基於GoLang的高性能多線程BTC礦池轉發中繼代理工具. </h4>
-<h4 align="center">暫時只建議F2pool用戶使用，其他礦池請等待後續開發 </h4>
+<h4 align="center">ETH/ETC轉發請進(https://github.com/GoMinerProxy/GoMinerProxy)</h4>
+<h4 align="center">BTC暫時只建議F2pool用戶使用，其他礦池請等待後續開發 </h4>
 <p align="center">
   <a>
     <img src="https://img.shields.io/badge/Release-Bate_BTC-orgin.svg" alt="travis">
