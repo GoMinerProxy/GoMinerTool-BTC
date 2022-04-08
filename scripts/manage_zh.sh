@@ -39,7 +39,7 @@ install(){
     screen -r gominertool-btc -p 0 -X stuff "./run.sh"
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
-    sleep 2s
+    sleep 4s
     echo "GoMinerTool-BTC V1.1.0-Beta已经安装到/root/gominertool-btc"
     cat /root/gominertool-btc/pwd.txt
     echo ""
@@ -79,7 +79,7 @@ update(){
     screen -r gominertool-btc -p 0 -X stuff "./run.sh"
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
-    sleep 2s
+    sleep 4s
     echo "GoMinerTool-BTC 已经更新至V1.1.0-BTC版本并启动"
     cat /root/gominertool-btc/pwd.txt
     echo ""
@@ -177,7 +177,7 @@ check_limit(){
 
 echo "======================================================="
 echo "GoMinerTool-BTC 一键脚本，脚本默认安装到/root/gominertool-btc"
-echo "                                   脚本版本：V1.1.0-Beta"
+echo "                                   脚本版本：V1.1.0"
 echo "  1、安  装"
 echo "  2、卸  载"
 echo "  3、更  新"
