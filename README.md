@@ -1,17 +1,17 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/GoMinerProxy/GoMinerProxy-BTC/main/images/logo.png" width="350"/>
+  <img src="https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/images/logo.png" width="350"/>
 </h1>
 
 <h4 align="center">基於GoLang的高性能多線程BTC礦池轉發中繼代理工具. </h4>
 <h4 align="center">ETH/ETC轉發請進(https://github.com/GoMinerProxy/GoMinerProxy)</h4>
-<h4 align="center">BTC暫時只建議F2pool用戶使用，其他礦池請等待後續開發 </h4>
+<h4 align="center">BTC暫時只建議BTC.COM/F2pool/Poolin用戶使用，其他礦池請等待後續開發 </h4>
 <p align="center">
   <a>
-    <img src="https://img.shields.io/badge/Release-Bate_BTC-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Release-1.1.0_BTC-orgin.svg" alt="travis">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Last_Update-2022_01_20-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Last_Update-2022_04_08-orgin.svg" alt="travis">
   </a>
   <a>
     <img src="https://img.shields.io/badge/Language-GoLang-green.svg" alt="travis">
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/GoMinerProxy/GoMinerProxy-BTC/blob/main/README_zh-cn.md">简体介绍</a> •
+  <a href="https://github.com/GoMinerProxy/GoMinerTool-BTC/blob/main/README_zh-cn.md">简体介绍</a> •
   <a href="https://gominerproxy.github.io/zh_hk/">文檔(繁體中文)</a> •
   <a href="https://gominerproxy.github.io/zh_cn/">文档(简体中文)</a> •
   <a href="https://t.me/+afVqEXnxtQAyNWNh">Telegram 討論群组</a> •
@@ -50,18 +50,29 @@
 
 ## :hammer_and_wrench: 部署
 
-最新軟件版本請見：<a href="https://github.com/GoMinerProxy/GoMinerProxy-BTC/releases">Github Release</a></br>
+最新軟件版本請見：<a href="https://github.com/GoMinerProxy/GoMinerTool-BTC/releases">Github Release</a></br>
+Windows 直接下載適用於您目標機器操作系統、CPU架構的主程序，直接運行即可。
+</br>
+Linux 可按照下述指令運行，請注意下載鏈接需要適用於您目標機器操作系統、CPU架構。
 
-### Linux一鍵管理脚本
+### Linux一鍵管理脚本(自帶崩潰重啟，但無開機自啟)
 ```shell
-即將更新
+# 海外伺服器可用
+bash <(curl -s -L https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/scripts/manage.sh)
+# 大陆伺服器可用
+bash <(curl -s -L https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/scripts/manage_proxy.sh)
 ```
+```shell
+# 再次SSH链接可以使用下述指令查看输出
+screen -r gominertool-btc
+```
+以上為最簡單的部署示例，您可以參考 [文檔 - 快速開始](https://gominerproxy.github.io/zh_hk/) 進行更為完善的部署。 
 
 ## :alembic: 技术栈
 
 * [Go](https://golang.org/) + [Gin](https://github.com/gin-gonic/gin)
 * [NodeJs](https://nodejs.org/) + [GitBook](https://www.gitbook.com/)
-* [Vue.JS](https://vuejs.org/) + [vue-element](https://panjiachen.github.io/vue-element-admin-site/zh/)
+* [Vue.JS](https://vuejs.org/) + [vue-element](https://panjiachen.github.io/vue-element-admin-site/)
 
 ## :scroll: 開發抽水
 * 恆定0.3%
