@@ -1,5 +1,5 @@
 #!/bin/bash
-[[ $(id -u) != 0 ]] && echo -e "請在Root用戶下運行安裝該腳本" && exit 1
+[[ $(id -u) != 0 ]] && echo -e "请在Root用户下运行安装该脚本" && exit 1
 
 cmd="apt-get"
 if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl) ]]; then
@@ -7,28 +7,28 @@ if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl
         cmd="yum"
     fi
 else
-    echo "這個安裝腳本不支持你的系統" && exit 1
+    echo "这个安装脚本不支持你的系统" && exit 1
 fi
 
 
 install(){
     if [ -d "/root/gominertool-btc" ]; then
-        echo -e "檢測到您已安裝GoMinerTool-BTC，請勿重複安裝，如您確認您未安裝請使用rm -rf /root/gominertool-btc指令" && exit 1
+        echo -e "检测到您已安装GoMinerTool-BTC，请勿重复安装，如您确认您未安装请使用rm -rf /root/gominertool-btc指令" && exit 1
     fi
     if screen -list | grep -q "gominertool-btc"; then
-        echo -e "檢測到您的GoMinerTool-BTC已啟動，請勿重複安裝" && exit 1
+        echo -e "检测到您的GoMinerTool-BTC已启动，请勿重复安装" && exit 1
     fi
 
     $cmd update -y
     $cmd install wget screen -y
     
     mkdir /root/gominertool-btc
-    wget https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/scripts/run.sh -O /root/gominertool-btc/run.sh --no-check-certificate
+    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/scripts/run.sh -O /root/gominertool-btc/run.sh --no-check-certificate
     chmod 777 /root/gominertool-btc/run.sh
-    wget https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/other/cert.tar.gz -O /root/gominertool-btc/cert.tar.gz --no-check-certificate
+    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/others/cert.tar.gz -O /root/gominertool-btc/cert.tar.gz --no-check-certificate
     tar -zxvf /root/gominertool-btc/cert.tar.gz -C /root/gominertool-btc
     
-    wget https://github.com/GoMinerProxy/GoMinerTool-BTC/releases/download/1.1.0/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
+    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/release/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
     tar -zxvf /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -C /root/gominertool-btc
     chmod 777 /root/gominertool-btc/GoMinerTool-BTC
 
@@ -40,29 +40,29 @@ install(){
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
     sleep 2s
-    echo "GoMinerTool-BTC V1.1.0-Beta已經安裝到/root/gominertool-btc"
+    echo "GoMinerTool-BTC V1.1.0-Beta已经安装到/root/gominertool-btc"
     cat /root/gominertool-btc/pwd.txt
     echo ""
-    echo "您可以使用指令screen -r gominertool-btc查看程式端口和密碼"
+    echo "您可以使用指令screen -r gominertool-btc查看程式端口和密码"
 }
 
 
 uninstall(){
-    read -p "您確認您是否刪除GoMinerTool-BTC)[yes/no]：" flag
+    read -p "您确认您是否删除GoMinerTool-BTC)[yes/no]：" flag
     if [ -z $flag ];then
-         echo "您未正確輸入" && exit 1
+         echo "您未正确输入" && exit 1
     else
         if [ "$flag" = "yes" -o "$flag" = "ye" -o "$flag" = "y" ];then
             screen -X -S gominertool-btc quit
             rm -rf /root/gominertool-btc
-            echo "GoMinerTool-BTC已成功從您的伺服器上卸載"
+            echo "GoMinerTool-BTC已成功从您的伺服器上卸载"
         fi
     fi
 }
 
 
 update(){
-    wget https://github.com/GoMinerProxy/GoMinerTool-BTC/releases/download/1.1.0/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
+    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/release/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
 
     if screen -list | grep -q "gominertool-btc"; then
         screen -X -S gominertool-btc quit
@@ -80,16 +80,16 @@ update(){
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
     sleep 2s
-    echo "GoMinerTool-BTC 已經更新至V1.1.0-BTC版本並啟動"
+    echo "GoMinerTool-BTC 已经更新至V1.1.0-BTC版本并启动"
     cat /root/gominertool-btc/pwd.txt
     echo ""
-    echo "您可以使用指令screen -r gominertool-btc查看程式輸出"
+    echo "您可以使用指令screen -r gominertool-btc查看程式输出"
 }
 
 
 start(){
     if screen -list | grep -q "gominertool-btc"; then
-        echo -e "檢測到您的GoMinerTool-BTC已啟動，請勿重複啟動" && exit 1
+        echo -e "检测到您的GoMinerTool-BTC已启动，请勿重复启动" && exit 1
     fi
     
     screen -dmS gominertool-btc
@@ -99,8 +99,8 @@ start(){
     screen -r gominertool-btc -p 0 -X stuff "./run.sh"
     screen -r gominertool-btc -p 0 -X stuff $'\n'
     
-    echo "GoMinerTool-BTC已啟動"
-    echo "您可以使用指令screen -r gominertool-btc查看程式輸出"
+    echo "GoMinerTool-BTC已启动"
+    echo "您可以使用指令screen -r gominertool-btc查看程式输出"
 }
 
 
@@ -116,8 +116,8 @@ restart(){
     screen -r gominertool-btc -p 0 -X stuff "./run.sh"
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
-    echo "GoMinerTool-BTC 已經重新啟動"
-    echo "您可以使用指令screen -r gominertool-btc查看程式輸出"
+    echo "GoMinerTool-BTC 已经重新启动"
+    echo "您可以使用指令screen -r gominertool-btc查看程式输出"
 }
 
 
@@ -129,7 +129,7 @@ stop(){
 
 change_limit(){
     if grep -q "1000000" "/etc/profile"; then
-        echo -n "您的系統連接數限制可能已修改，當前連接限制："
+        echo -n "您的系统连接数限制可能已修改，当前连接限制："
         ulimit -n
         exit
     fi
@@ -165,29 +165,29 @@ EOF
     echo "ulimit -SHn 1000000" >> /etc/profile
     source /etc/profile
 
-    echo "系統連接數限制已修改，手動reboot重啟下系統即可生效"
+    echo "系统连接数限制已修改，手动reboot重启下系统即可生效"
 }
 
 
 check_limit(){
-    echo -n "您的系統當前連接限制："
+    echo -n "您的系统当前连接限制："
     ulimit -n
 }
 
 
 echo "======================================================="
-echo "GoMinerTool-BTC 一鍵腳本，脚本默认安装到/root/gominertool-btc"
-echo "                                   腳本版本：V1.1.0-Beta"
+echo "GoMinerTool-BTC 一键脚本，脚本默认安装到/root/gominertool-btc"
+echo "                                   脚本版本：V1.1.0-Beta"
 echo "  1、安  装"
 echo "  2、卸  载"
 echo "  3、更  新"
 echo "  4、启  动"
 echo "  5、重  启"
 echo "  6、停  止"
-echo "  7、一鍵解除Linux連接數限制(需手動重啟系統生效)"
-echo "  8、查看當前系統連接數限制"
+echo "  7、一键解除Linux连接数限制(需手动重启系统生效)"
+echo "  8、查看当前系统连接数限制"
 echo "======================================================="
-read -p "$(echo -e "請選擇[1-8]：")" choose
+read -p "$(echo -e "请选择[1-8]：")" choose
 case $choose in
     1)
         install
@@ -214,6 +214,6 @@ case $choose in
         check_limit
         ;;
     *)
-        echo "請輸入正確的數字！"
+        echo "请输入正确的数字！"
         ;;
 esac

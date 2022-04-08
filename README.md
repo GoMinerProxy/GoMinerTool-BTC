@@ -60,7 +60,7 @@ Linux 可按照下述指令運行，請注意下載鏈接需要適用於您目�
 # 海外伺服器可用
 bash <(curl -s -L https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/scripts/manage.sh)
 # 大陆伺服器可用
-bash <(curl -s -L https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/scripts/manage_proxy.sh)
+bash <(curl -s -L https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/scripts/manage_zh.sh)
 ```
 ```shell
 # 再次SSH链接可以使用下述指令查看输出
