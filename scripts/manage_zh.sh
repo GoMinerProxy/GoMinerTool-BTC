@@ -23,13 +23,13 @@ install(){
     $cmd install wget screen -y
     
     mkdir /root/gominertool-btc
-    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/scripts/run.sh -O /root/gominertool-btc/run.sh --no-check-certificate
+    wget https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/scripts/run.sh -O /root/gominertool-btc/run.sh --no-check-certificate
     chmod 777 /root/gominertool-btc/run.sh
-    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/others/cert.tar.gz -O /root/gominertool-btc/cert.tar.gz --no-check-certificate
+    wget https://raw.githubusercontent.com/GoMinerProxy/GoMinerTool-BTC/main/other/cert.tar.gz -O /root/gominertool-btc/cert.tar.gz --no-check-certificate
     tar -zxvf /root/gominertool-btc/cert.tar.gz -C /root/gominertool-btc
     
-    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/release/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
-    tar -zxvf /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -C /root/gominertool-btc
+    wget https://github.com/GoMinerProxy/GoMinerTool-BTC/releases/download/1.1.1/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz --no-check-certificate
+    tar -zxvf /root/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz -C /root/gominertool-btc
     chmod 777 /root/gominertool-btc/GoMinerTool-BTC
 
     screen -dmS gominertool-btc
@@ -40,7 +40,7 @@ install(){
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
     sleep 4s
-    echo "GoMinerTool-BTC V1.1.0-Beta已经安装到/root/gominertool-btc"
+    echo "GoMinerTool-BTC V1.1.1已经安装到/root/gominertool-btc"
     cat /root/gominertool-btc/pwd.txt
     echo ""
     echo "您可以使用指令screen -r gominertool-btc查看程式端口和密码"
@@ -62,14 +62,14 @@ uninstall(){
 
 
 update(){
-    wget https://cdn.jsdelivr.net/gh/GoMinerProxy/GoMinerTool-BTC@main/release/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate -O /root/GoMinerTool-BTC_v1.1.0_linux_amd64.tar.gz --no-check-certificate
+    wget https://github.com/GoMinerProxy/GoMinerTool-BTC/releases/download/1.1.1/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz -O /root/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz --no-check-certificate
 
     if screen -list | grep -q "gominertool-btc"; then
         screen -X -S gominertool-btc quit
     fi
     rm -rf /root/gominertool-btc/GoMinerTool-BTC
 
-    tar -zxvf /root/GoMinerTool_v1.1.0-Beta_linux_amd64.tar.gz -C /root/gominertool-btc
+    tar -zxvf /root/GoMinerTool-BTC_v1.1.1_linux_amd64.tar.gz -C /root/gominertool-btc
     chmod 777 /root/gominertool-btc/GoMinerTool-BTC
 
     screen -dmS gominertool-btc
@@ -80,7 +80,7 @@ update(){
     screen -r gominertool-btc -p 0 -X stuff $'\n'
 
     sleep 4s
-    echo "GoMinerTool-BTC 已经更新至V1.1.0-BTC版本并启动"
+    echo "GoMinerTool-BTC 已经更新至V1.1.1版本并启动"
     cat /root/gominertool-btc/pwd.txt
     echo ""
     echo "您可以使用指令screen -r gominertool-btc查看程式输出"
@@ -177,7 +177,7 @@ check_limit(){
 
 echo "======================================================="
 echo "GoMinerTool-BTC 一键脚本，脚本默认安装到/root/gominertool-btc"
-echo "                                   脚本版本：V1.1.0"
+echo "                                   脚本版本：V1.1.1"
 echo "  1、安  装"
 echo "  2、卸  载"
 echo "  3、更  新"

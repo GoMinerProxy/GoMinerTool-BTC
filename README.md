@@ -8,10 +8,10 @@
 <h4 align="center">BTC暫時只建議BTC.COM/F2pool/Poolin用戶使用，其他礦池請等待後續開發 </h4>
 <p align="center">
   <a>
-    <img src="https://img.shields.io/badge/Release-1.1.0_BTC-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Release-1.1.1_BTC-orgin.svg" alt="travis">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Last_Update-2022_04_08-orgin.svg" alt="travis">
+    <img src="https://img.shields.io/badge/Last_Update-2022_04_21-orgin.svg" alt="travis">
   </a>
   <a>
     <img src="https://img.shields.io/badge/Language-GoLang-green.svg" alt="travis">
